@@ -1,0 +1,13 @@
+
+@import "tailwindcss";
+:root{--bg:245 243 250;--surface:255 255 255;--ink:24 20 36;--muted:107 100 125;--accent:91 33 182;--accent2:147 51 234;--line:221 215 235;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:10 8 16;--surface:20 16 30;--ink:236 232 245;--muted:154 146 175;--accent:124 58 237;--accent2:192 132 252;--line:42 36 60}}
+:root[data-theme="dark"]{--bg:10 8 16;--surface:20 16 30;--ink:236 232 245;--muted:154 146 175;--accent:124 58 237;--accent2:192 132 252;--line:42 36 60}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
+body{background:rgb(var(--bg));color:rgb(var(--ink))}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+.grid-bg{background-image:linear-gradient(rgb(var(--ink)/.05) 1px,transparent 1px),linear-gradient(90deg,rgb(var(--ink)/.05) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+.safe-top{top:env(safe-area-inset-top,0px)}
